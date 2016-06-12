@@ -1,0 +1,63 @@
+﻿<Window x:Class="KreatorZamowien.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:KreatorZamowien"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="420" Width="525">
+    <Grid>
+        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="5*"/>
+            <ColumnDefinition Width="2*"/>
+        </Grid.ColumnDefinitions>
+        <ListView Name="ListView1" Margin="10" Grid.Column="0" ItemsSource="{Binding OrderList}">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Name" DisplayMemberBinding="{Binding Name}"/>
+                    <GridViewColumn Header="LastName" DisplayMemberBinding="{Binding LastName}"/>
+                    <GridViewColumn Header="Table Number" DisplayMemberBinding="{Binding TableNumber}"/>
+                    <GridViewColumn Header="Set" DisplayMemberBinding="{Binding Sets}"/>
+                    <GridViewColumn Header="Drinks" DisplayMemberBinding="{Binding Drinks}"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <StackPanel Grid.Column="1" Margin="5">
+            <Label Content="Restaurant Order" FontSize="15" HorizontalAlignment="Center"/>
+            <StackPanel>
+                <Label Content="Name"></Label>
+                <TextBox Name="NameTextBox"></TextBox>
+            </StackPanel>
+            <StackPanel>
+                <Label Content="LastName"></Label>
+                <TextBox Name="LastNameTextBox"></TextBox>
+            </StackPanel>
+            <StackPanel>
+                <Label Content="Table number"></Label>
+                <TextBox Name="TableTextbox"></TextBox>
+            </StackPanel>
+            <StackPanel>
+                <Label Content="Set"/>
+                <ComboBox Name="SetComboBox"/>
+            </StackPanel>
+            <StackPanel>
+                <Label Content="Drinks"/>
+                <ComboBox Name="DrinksComboBox"/>
+            </StackPanel>
+            <StackPanel>
+                <Label Content="Amount"/>
+                <StackPanel Orientation="Horizontal">
+                    <Button Content="-" Width="20" Click="MinusAmountButton"/>
+                        <TextBox Name="WeightTextBox" Width="100" Text="{Binding Path=Amount}"/>
+                    <Button Content="+" Width="20" Click="PlusAmountButton"/>
+                </StackPanel>
+            </StackPanel>
+           
+            <Button Name="OrderButton" Content="Order" Margin="0,20,0,0" Click="OrderButton_Click"/>
+            <Button Name="DeleteButton" Content="Delete" Click="DeleteButton_Click"/>
+            <Button Name="SaveButton" Content="Save Order" Click="SaveButton_Click"/>
+            <Button Name="LoadButton" Content="Load Order" Click="LoadButton_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>
