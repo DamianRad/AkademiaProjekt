@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:KreatorZamowien"
         mc:Ignorable="d"
-        Title="MainWindow" Height="420" Width="525">
+        Title="MainWindow" Height="620" Width="525">
     <Grid>
         
         <Grid.ColumnDefinitions>
@@ -35,7 +35,7 @@
             </StackPanel>
             <StackPanel>
                 <Label Content="Table number"></Label>
-                <TextBox Name="TableTextbox"></TextBox>
+                <TextBox Name="TableTextbox" Text="{Binding Path=TableNumber, TargetNullValue=0, FallbackValue=0}"/>
             </StackPanel>
             <StackPanel>
                 <Label Content="Set"/>

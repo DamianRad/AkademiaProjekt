@@ -48,7 +48,8 @@ namespace KreatorZamowien
         {
             string Name = this.NameTextBox.Text;
             string NastName = this.LastNameTextBox.Text;
-            int TableNumber = int.Parse(this.TableTextbox.Text);
+            int TableNumber = TableNumber = int.Parse(this.TableTextbox.Text); ;
+            
             Sets Sets = (Sets)Enum.Parse(typeof(Sets), this.SetComboBox.Text);
             Drinks Drinks = (Drinks)Enum.Parse(typeof(Drinks), this.DrinksComboBox.Text);
             Order Order = new Order(Name, NastName, TableNumber, Sets, Drinks);
